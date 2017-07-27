@@ -1,0 +1,53 @@
+#开发环境服务URL
+server:
+  address: 127.0.0.1
+  port: 8888
+  context-path: /spring-boot-demo
+
+#配置mybatis
+#mybatis:
+#    type-aliases-package: com.bzzx.domain
+#    mapper-locations: classpath:mapper/*.xml
+#    mappers: com.bzzx.util.MyMapper
+#    not-empty: false
+#    identity: MYSQL
+
+#配置驱动信息
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://192.168.1.100:3306/spring_boot_demo
+    username: root
+    password: ASDF1230
+    driver-class-name: com.mysql.jdbc.Driver
+    name: spring_boot_demo
+  druid:
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 1
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat
+  thymeleaf:
+    prefix: /templates/
+    suffix: .html
+    cache: false
+    mode: HTML5
+    encoding: utf-8
+    content-type: text/html
+    check-template: true
+#    connectionProperties:
+#      druid.stat.mergeSql: true
+#      druid.stat.slowSqlMillis: 5000
+
+#mybatis:
+#  type-aliases-package: com.bzzx.domain
+#  mapper-locations: classpath:mapper/*.xml
+

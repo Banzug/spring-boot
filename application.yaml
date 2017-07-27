@@ -1,0 +1,43 @@
+#引入开发环境配置
+spring:
+  profiles:
+    active: dev
+#    active: prod
+
+#以下内容为联系部分
+#通过bean的形式引入配置文件属性到实体类
+common:
+  host: 192.168.1.100
+  username: root
+  port: 3306
+  list:
+    - string1
+    - string2
+    - string3
+  maps:
+    map_key1: map_value1
+    map_key2: map_value2
+
+#可通过直接使用value的形式获取配置属性
+book: test
+
+lists: top1, top2, top3
+#map的形式需要双引号把map的内容括起来
+map: "{string_key1:'string_value1', string_key2:'string_value1', string_key3:'string_value3'}"
+commstr: ${defualtValue:error}
+# 结束联系内容
+
+
+#配置日志输出
+#日志配置要求：
+#1. 如果只配置了path，默认输出日志名为spring.log
+#2. 如果只配置了file，默认输出在项目的target目录下
+#@See：spring boot 1.5.3 官方文档 26.3 File output
+logging:
+  level:
+    com.bzzx.controller: warn
+    com.bzzx.datasource: info
+  file: spring-boot-log.txt
+  path: E:/work
+
+
